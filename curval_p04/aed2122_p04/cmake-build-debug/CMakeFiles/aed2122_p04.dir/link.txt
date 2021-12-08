@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/aed2122_p04.dir/main.cpp.o CMakeFiles/aed2122_p04.dir/Tests/tests.cpp.o CMakeFiles/aed2122_p04.dir/Tests/funSortProblem.cpp.o CMakeFiles/aed2122_p04.dir/Tests/product.cpp.o CMakeFiles/aed2122_p04.dir/Tests/piece.cpp.o  -o aed2122_p04  lib/libgtestd.a lib/libgtest_maind.a lib/libgtestd.a -lpthread 
