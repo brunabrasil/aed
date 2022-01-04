@@ -1,0 +1,31 @@
+## LDTS_1204 - <PROJECT NAME>
+
+descricao do jogo
+
+Este projeto foi desenvolvido por Bruna Marques (up202007191@edu.fe.up.pt), Carolina Brandão (up202004461@edu.fc.up.pt) e Miguel Curval (up201105191@edu.fe.up.pt)
+### IMPLEMENTED FEATURES
+
+
+### PLANNED FEATURES
+
+-dois tipos de personagens: orcs e humanos
+-um orc pode ter diferentes funcionalidades, como: mover-se, atacar, reparar, construir, colher
+-o jogo mostra que quantidade de vida que um orc tem
+-orcs podem ser separados em work units e arm units:
+  + os da arm units podem ter diferentes poderes
+-o rato é a principal forma para controlar os movimentos dos orcs
+
+### DESIGN
+
+
+#### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
+
+#### DATA CLASS
+
+### TESTING
+
+### SELF-EVALUATION
+
+-Bruna Marques:
+-Carolina Brandão:
+-Miguel Curval:
