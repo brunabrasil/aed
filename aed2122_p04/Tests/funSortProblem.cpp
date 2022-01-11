@@ -69,8 +69,59 @@ unsigned FunSortProblem::minPlatforms (const vector<float> &arrival, const vecto
 
 void pairNutsBolts(vector<Piece>::iterator leftN, vector<Piece>::iterator rightN, vector<Piece>::iterator leftB, vector<Piece>::iterator rightB){
 
+    const long lenN = rightN - leftN;
+    if(lenN < 2) return;
+    //const auto &medianN = leftN + lenN / 2;
+    const auto center = leftN + lenN / 2;
+    //const auto &medianB = leftB + (center-leftN);
+    /*for(vector<Piece>::iterator i = leftB ; i <= rightB; i++){
+        if(i->getDiameter()==medianN->getDiameter()){
+            swap(*i, *medianB);
+        }
+    }*/
+    if (center->getDiameter() < leftN->getDiameter())
+        swap(*center, *leftN); //swap elements if order incorrect
+    if (rightN->getDiameter() < leftN->getDiameter())
+        swap(*leftN, *rightN); //swap elements if order incorrect
+    if (rightN->getDiameter() < center->getDiameter())
+        swap(*center, *rightN); //swap elements if order incorrect
+    swap(*center, *rightN); //puts pivot in position right-1
+    const auto & medianN = (rightN-1);
 
-    const auto medianN =
+    if (center->getDiameter() < leftB->getDiameter())
+        swap(*center, *leftB); //swap elements if order incorrect
+    if (rightB->getDiameter() < leftB->getDiameter())
+        swap(*leftB, *rightB); //swap elements if order incorrect
+    if (rightB->getDiameter() < center->getDiameter())
+        swap(*center, *rightB); //swap elements if order incorrect
+    swap(*center, *rightB); //puts pivot in position right-1
+    const auto & medianB = (rightB-1);
+
+    auto &iN = leftN, &jN = rightN, &iB = leftB, &jB = rightB;
+    auto xN = *medianN, xB = *medianB;
+    --jB;
+    --jN;
+
+    for(;;){
+        while ((++iN)->getDiameter() < xB.getDiameter());
+        while((--jN)->getDiameter() > xB.getDiameter());
+        if(iN < jN)
+            swap(*iN, *jN);
+        else break;
+    }
+    for(;;){
+        while ((++iB)->getDiameter() < xN.getDiameter());
+        while((--jB)->getDiameter() > xN.getDiameter());
+        if(iB < jB)
+            swap(*iB, *jB);
+        else break;
+    }
+    //reset pivot
+    swap(*iN, *(rightN -1));
+    swap(*iB, *(rightB -1));
+
+    pairNutsBolts(leftN, iN-1, leftB, iB-1);
+    pairNutsBolts(iN + 1, rightN, iB-1, rightB);
 }
 void FunSortProblem::nutsBolts(vector<Piece> &nuts, vector<Piece> &bolts) {
     pairNutsBolts(nuts.begin(), nuts.end()-1, bolts.begin(), bolts.end()-1);

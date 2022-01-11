@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/aed2122_p06.dir/main.cpp.o CMakeFiles/aed2122_p06.dir/Tests/tests.cpp.o CMakeFiles/aed2122_p06.dir/Tests/dictionary.cpp.o CMakeFiles/aed2122_p06.dir/Tests/game.cpp.o  -o ../Tests/aed2122_p06  lib/libgtestd.a lib/libgtest_maind.a lib/libgtestd.a -lpthread 

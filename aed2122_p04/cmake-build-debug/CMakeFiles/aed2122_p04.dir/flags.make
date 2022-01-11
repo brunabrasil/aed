@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/c/Users/bruna/Downloads/aed2122_p04/lib/googletest-master/googlemock/include -isystem /mnt/c/Users/bruna/Downloads/aed2122_p04/lib/googletest-master/googletest/include -isystem /mnt/c/Users/bruna/Downloads/aed2122_p04/lib/googletest-master/googletest 
+CXX_INCLUDES = -I"/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p04/lib/googletest-master/googlemock/include" -isystem "/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p04/lib/googletest-master/googletest/include" -isystem "/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p04/lib/googletest-master/googletest" 
 
