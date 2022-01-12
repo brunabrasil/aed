@@ -53,6 +53,9 @@ string Dictionary::consult(string word1, WordMean& previous, WordMean& next) con
             else{
                 previous=next;
             }
+            it++;
+            next=(*it);
+            if(findMean<(*it)) break;
         }
     }
     return "word not found";
@@ -60,7 +63,20 @@ string Dictionary::consult(string word1, WordMean& previous, WordMean& next) con
 
 //TODO
 bool Dictionary::update(string word1, string mean1) {
-    return true;
+    WordMean findMean(word1, "");
+    iteratorBST<WordMean> it = words.begin();
+    while(it!=words.end()){
+        if((*it)==findMean){
+            (*it).setMeaning(mean1);
+            return true;
+        }
+        else
+            it++;
+    }
+    WordMean w= WordMean(word1, mean1);
+    words.insert(w);
+    return false;
+
 }
 
 //TODO
