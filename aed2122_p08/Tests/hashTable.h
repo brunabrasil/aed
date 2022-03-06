@@ -90,25 +90,27 @@ bool HashTable<KeyType>::contains(const KeyType& k) {
 // ..............................
 // a) Inserindo elementos
 // TODO
+
 template <class KeyType>
 bool HashTable<KeyType>::insert(const KeyType& k) {
     if(contains(k))
         return false;
-    if(getNumEmpty()<=1){
+    else if(getNumEmpty()<=1)
         return false;
-    }
-    int x = findPos(k);
-    table[x].state = ACTIVE;
-    table[x].key = k;
-    numEmpty--;
+    int pos = findPos(k);
+    table[pos].key=k;
+    table[pos].state=ACTIVE;
     numActive++;
+    numEmpty--;
     return true;
 }
+
 
 // ..............................
 // b) Removendo elementos
 // TODO
 template <class KeyType>
+
 bool HashTable<KeyType>::remove(const KeyType& k) {
     int x = findPos(k);
     if(table[x].state == ACTIVE){
@@ -122,6 +124,7 @@ bool HashTable<KeyType>::remove(const KeyType& k) {
 // ..............................
 // c) Refazendo a tabela
 // TODO
+
 template <class KeyType>
 bool HashTable<KeyType>::rehash(int n) {
     if(n < numActive+1) return false;

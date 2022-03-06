@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cctype>
 
+
 // Exemplo de função de hash para ints
 unsigned FunWithHashTables::hashInt(const int& i) {
   return i;
@@ -26,20 +27,21 @@ unsigned FunWithHashTables::hashString(const string& s) {
 // ..............................
 // d) Contando diferentes somas de pares
 // TODO
+
 int FunWithHashTables::sumPairs(const vector<int>& numbers) {
-    int size = numbers.size();
-    HashTable<int> table(size, hashInt);
-    for(int i=0; i<numbers.size(); i++){
-        for(int j = i+1; j < numbers.size(); j++){
-            if(table.getNumEmpty()<=1){
-                size *= 2;
-                table.rehash(size);
+    int size=numbers.size();
+    HashTable<int> answer(size, hashInt);
+    for (int i = 0; i < numbers.size()-1; ++i) {
+        for (int j = i+1; j < numbers.size() ; ++j) {
+            if(answer.getNumEmpty()<=1){
+                size*=2;
+                answer.rehash(size);
             }
-            int key = numbers[i] + numbers[j];
-            table.insert(key);
+            answer.insert(numbers[i]+numbers[j]);
         }
     }
-  return table.getNumActive();
+    return answer.getNumActive();
+
 }
 
 // ----------------------------------------------------------
@@ -47,67 +49,60 @@ int FunWithHashTables::sumPairs(const vector<int>& numbers) {
 // ----------------------------------------------------------
 // TODO
 int FunWithHashTables::dnaMotifs(string dna, int k, unordered_set<string>& motifs) {
-
-    unordered_map<string, int> map;
+    unordered_map<string , int> map;
     int m=0;
-    for(int i=0;i<=dna.length()-k; i++){
-        pair<string, int> seq(dna.substr(i,k), 1);
-        pair<unordered_map<string, int>:: iterator , bool> in = map.insert(seq);
-        if(!in.second){
-            in.first->second++;
-            m = max(m, in.first->second);
+    for (int i = 0; i <= dna.length()-k; ++i) {
+        pair<string, int> in(dna.substr(i,k), 1);
+        if(!map.insert(in).second){
+            map[dna.substr(i,k)]++;
+            m=max(m, map[dna.substr(i,k)]);
         }
     }
-    unordered_map<string, int>::iterator it = map.begin();
-    while(it!=map.end()){
-        if(it->second==m){
-            motifs.insert(it->first);
+    for(auto x: map){
+        if(x.second==m){
+            motifs.insert(x.first);
         }
-        it++;
     }
     return m;
 }
+
 
 // ----------------------------------------------------------
 // Exercicio 3: Torre de Babel
 // ----------------------------------------------------------
 // TODO
-#include <cctype>
+
 vector<string> split(string in){
-    vector<string> ret;
-    string load = "";
-    for(int i=0; i<=in.length();i++){
-        if(!isalpha(in[i]) || i == in.length()){
-            if(!load.empty()){
-                ret.push_back(load);
-                load.clear();
-            }
+    vector<string> words;
+    string str="";
+    for (int i = 0; i <= in.length(); ++i) {
+        if(isalpha(in[i])){
+            str+=tolower(in[i]);
         }
-        else
-            if(isalpha(in[i]))
-                load += tolower(in[i]);
+        else{
+            words.push_back(str);
+            str.clear();
+        }
     }
-    return ret;
+    return words;
 }
 
 void FunWithHashTables::findLanguage(string text, const unordered_map<string, vector<string>>& dict, unordered_map<string, int>& answer) {
-    vector<string> words = split(text);
-    unordered_multimap<string, string> reDict;
-    for(auto it = dict.begin(); it!=dict.end(); it++){
-        string lang = it->first;
-        for(auto et = it->second.begin(); et != it->second.end(); et++){
-            pair<string, string> load(*et, lang);
-            reDict.insert(load);
+    vector<string> w= split(text);
+    unordered_multimap<string, string> d;
+    for(auto x: dict){
+        for(auto y: x.second){
+            pair<string, string> in(y, x.first);
+            d.insert(in);
         }
-        answer.insert(pair<string, int> (lang, 0));
+        answer.insert(pair<string, int>(x.first,0));
     }
-    for(auto word: words){
-        auto range = reDict.equal_range(word);
-        for(auto it = range.first; it!=range.second; it++){
-            answer.find(it->second)->second++;
+    for(auto z: w){
+        auto range = d.equal_range(z);
+        for(auto it=range.first; it!=range.second; it++){
+            answer[it->second]++;
         }
     }
-
 }
 
 // ----------------------------------------------------------

@@ -36,15 +36,45 @@ BinaryTree<Circle>& Game::getGame() {
 
 //TODO
 Game::Game(int height, vector<int>& points, vector<bool>& states) {
+    vector<BinaryTree<Circle>*> leaves(points.size(), nullptr);
+    for(int i = points.size(); i<=0; i--){
+        if(2*i+1 > points.size()-1){
+            leaves[i] = new BinaryTree<Circle> (Circle(points[i], states[i]));
+        }
+        else{
+            leaves[i] = new BinaryTree<Circle>(Circle(points[i], states[i]), *leaves[2*i+1], *leaves[2*i+2]);
+        }
+    }
+    game = *leaves[0];
+    for(auto it: leaves)
+        delete it;
 }
 
 //TODO
 int Game::play() {
+    BTItrLevel<Circle> it(game);
+    Circle c = it.retrieve();
+    bool over = false;
+    while ((!it.isAtEnd())){
+        Circle& current = it.retrieve();
+        c.incNVisits();
+        if(c.getState()){
+
+        }
+    }
 	return 0;
 }
 
 //TODO
 int Game::mostVisited() const {
-	return 0;
+    BTItrLevel<Circle> it(game);
+    it.advance();
+    int max = 0;
+    while ((!it.isAtEnd())){
+        Circle c = it.retrieve();
+        if(c.getNVisits() > max) max = c.getNVisits();
+        it.advance();
+    }
+	return max;
 }
 

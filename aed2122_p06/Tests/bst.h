@@ -164,7 +164,7 @@ bool BST<Comparable>::insert(const Comparable& x, BinaryNode<Comparable>* & t) c
         t = new BinaryNode<Comparable>(x, NULL, NULL);
         return true;
     }
-    else if(static_cast<const error_code>(x) < t->element )
+    else if( static_cast<const error_code>(x) < t->element )
         return insert( x, t->left );
     else if( t->element < x )
         return insert( x, t->right );

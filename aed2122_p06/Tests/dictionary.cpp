@@ -41,6 +41,7 @@ void Dictionary::readFile(ifstream &f) {
 }
 
 //TODO
+
 string Dictionary::consult(string word1, WordMean& previous, WordMean& next) const {
     WordMean findMean(word1, "");
     iteratorBST<WordMean> it = words.begin();

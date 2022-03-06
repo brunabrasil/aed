@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p11/Tests/graph.cpp
+graph.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p11/Tests/graph.h
+climits
+-
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p11/Tests/graph.h
+minHeap.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p11/Tests/minHeap.h
+vector
+-
+list
+-
+iostream
+-
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p11/Tests/minHeap.h
+vector
+-
+unordered_map
+-
+

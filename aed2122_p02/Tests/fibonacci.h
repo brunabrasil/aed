@@ -3,7 +3,7 @@ unsigned fibonacci_1(unsigned n) {
     if (n <= 1)
         return n;
     return fibonacci_1(n-1) + fibonacci_1(n-2);
-}
+}//Time Complexity: O(2^N)
 
 unsigned fibonacci_2(unsigned n) {
     unsigned valPrevPrev = 0, valPrev = 1;
@@ -19,5 +19,6 @@ unsigned fibonacci_2(unsigned n) {
         valPrev = val;
     }
     return val;
-}
+}//Time Complexity: O(N);
+//Space Complexity: O(1)
 

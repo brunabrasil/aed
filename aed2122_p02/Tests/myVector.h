@@ -57,6 +57,17 @@ T MyVector<T>::max() const {
 // TODO
 template<class T>
 bool MyVector<T>::hasDuplicates() const {
+    set<T> s;
+    for(auto x: values){
+        if(!s.insert(x).second){
+            return true;
+        }
+    }
+    return false;
+}
+
+//outra forma:
+/*bool MyVector<T>::hasDuplicates() const {
     if(values.size()<=1)
         return false;
 
@@ -68,31 +79,27 @@ bool MyVector<T>::hasDuplicates() const {
         }
     }
     return false;
-}
+}*/
 
 // TODO
 template<class T>
 void MyVector<T>::removeDuplicates() {
-    if(values.size()<=1)
-        return;
-
-    vector<T> teste = getValues();
-    sort(teste.begin(), teste.end());
-    set<T> dic;
-    for(auto it= teste.begin(); it<teste.end()-1; it++){
-        if(*it == *(it+1)){
-           dic.insert(*(it+1));
-        }
-    }
-    for(auto it: dic){
-        auto it1=find(values.begin(), values.end(), it);
-        while(true){
-            it1= find(it1+1, values.end(), it);
-            if(it1==values.end())
-                break;
-            values.erase(it1);
-            it1--;
+    typename vector<T>::iterator it;
+    typename vector<T>::iterator et;
+    for (it = values.begin(); it != values.end(); it++) {
+        for (et = it+1; et != values.end(); et++) {
+            if ((*it) == (*et)) {
+                values.erase(et);
+                et--;
+            }
         }
     }
 }
 
+/**3a)*/
+//Time Complexity: O(N^2/(2*1+log(N)));
+//Space Complexity: O(1)
+
+/**3b)*/
+//Time Complexity: O(N^2)
+//Space Complexity: O(1)

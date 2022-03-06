@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p06/Tests/bst.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p06/Tests/binaryTree.h
 iostream
 -
 stack
@@ -14,21 +14,17 @@ stack
 queue
 -
 
-/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p06/Tests/dictionary.cpp
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p06/Tests/game.cpp
+game.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p06/Tests/game.h
+sstream
+-
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p06/Tests/game.h
+binaryTree.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p06/Tests/binaryTree.h
 iostream
 -
-string
+stdlib.h
 -
-fstream
--
-dictionary.h
-/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p06/Tests/dictionary.h
-
-/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p06/Tests/dictionary.h
-string
--
-fstream
--
-bst.h
-/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p06/Tests/bst.h
 

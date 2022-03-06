@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/c/Users/bruna/Downloads/aed2122_p02/lib/googletest-master/googletest/include -I/mnt/c/Users/bruna/Downloads/aed2122_p02/lib/googletest-master/googletest 
+CXX_INCLUDES = -I"/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p02/lib/googletest-master/googletest/include" -I"/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p02/lib/googletest-master/googletest" 
 

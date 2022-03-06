@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p01/Tests/parque.cpp
+parque.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p01/Tests/parque.h
+vector
+-
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/aed/aed2122_p01/Tests/parque.h
+iostream
+-
+string
+-
+vector
+-
+
