@@ -1,0 +1,86 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/graph.h
+minHeap.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/minHeap.h
+vector
+-
+list
+-
+iostream
+-
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/line.cpp
+line.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/line.h
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/line.h
+string
+-
+utility
+-
+vector
+-
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/main.cpp
+iostream
+-
+string
+-
+vector
+-
+sstream
+-
+fstream
+-
+cmath
+-
+filesystem
+-
+map
+-
+algorithm
+-
+stop.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/stop.h
+line.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/line.h
+menu.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/menu.h
+graph.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/graph.h
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/menu.cpp
+menu.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/menu.h
+limits
+-
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/menu.h
+iostream
+-
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/minHeap.h
+vector
+-
+unordered_map
+-
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/stop.cpp
+stop.h
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/stop.h
+
+/mnt/c/Users/bruna/OneDrive/Ambiente de Trabalho/feup/projeto_aed/aed_tp02/project2_aed-main/stop.h
+string
+-
+utility
+-
+vector
+-
+
